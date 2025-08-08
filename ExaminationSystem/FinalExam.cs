@@ -57,22 +57,6 @@ namespace ExaminationSystem
             return 0;
         }
 
-        public override object Clone()
-        {
-            var clone = new FinalExam(TimeOfExam, NumberOfQuestions);
-            if (Questions != null)
-            {
-                clone.Questions = Questions.Select(q => (Question)q.Clone()).ToArray();
-            }
-            return clone;
-        }
-
-        public override int CompareTo(object obj)
-        {
-            if (obj is FinalExam other)
-                return TimeOfExam.CompareTo(other.TimeOfExam);
-            throw new ArgumentException("Object is not a FinalExam");
-        }
 
         public override string ToString()
         {

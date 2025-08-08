@@ -59,22 +59,7 @@ namespace ExaminationSystem
             }
         }
 
-        public override object Clone()
-        {
-            var clone = new PracticalExam(TimeOfExam, NumberOfQuestions);
-            if (Questions != null)
-            {
-                clone.Questions = Questions.Select(q => (Question)q.Clone()).ToArray();
-            }
-            return clone;
-        }
-
-        public override int CompareTo(object obj)
-        {
-            if (obj is PracticalExam other)
-                return TimeOfExam.CompareTo(other.TimeOfExam);
-            throw new ArgumentException("Object is not a PracticalExam");
-        }
+      
 
         public override string ToString()
         {

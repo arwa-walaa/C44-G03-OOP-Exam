@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExaminationSystem
 {
-    public abstract class Exam : ICloneable, IComparable
+ 
+     public abstract class Exam 
     {
         public TimeSpan TimeOfExam { get; set; }
         public int NumberOfQuestions { get; set; }
@@ -27,8 +28,7 @@ namespace ExaminationSystem
         }
 
         public abstract void ShowExam();
-        public abstract object Clone();
-        public abstract int CompareTo(object obj);
+      
         public abstract override string ToString();
     }
 

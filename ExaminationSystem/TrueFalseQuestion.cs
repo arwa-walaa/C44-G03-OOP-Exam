@@ -28,27 +28,6 @@ namespace ExaminationSystem
             };
         }
 
-        public override object Clone()
-        {
-            var clone = new TrueFalseQuestion(Header, Body, Mark);
-            if (AnswerList != null)
-            {
-                clone.AnswerList = AnswerList.Select(a => (Answer)a.Clone()).ToArray();
-            }
-            if (RightAnswer != null)
-            {
-                clone.RightAnswer = (Answer)RightAnswer.Clone();
-            }
-            return clone;
-        }
-
-        public override int CompareTo(object obj)
-        {
-            if (obj is TrueFalseQuestion other)
-                return Header.CompareTo(other.Header);
-            throw new ArgumentException("Object is not a TrueFalseQuestion");
-        }
-
         public override string ToString()
         {
             return $"True/False Question: {Header}\n{Body}\nMark: {Mark}";

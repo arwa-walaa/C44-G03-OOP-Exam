@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExaminationSystem
 {
-    public class Subject : ICloneable, IComparable
+   
+
+     public class Subject 
     {
         public int SubjectId { get; set; }
         public string SubjectName { get; set; }
@@ -25,22 +27,7 @@ namespace ExaminationSystem
             SubjectExam = exam;
         }
 
-        public object Clone()
-        {
-            var clone = new Subject(SubjectId, SubjectName);
-            if (SubjectExam != null)
-            {
-                clone.SubjectExam = (Exam)SubjectExam.Clone();
-            }
-            return clone;
-        }
-
-        public int CompareTo(object obj)
-        {
-            if (obj is Subject other)
-                return SubjectId.CompareTo(other.SubjectId);
-            throw new ArgumentException("Object is not a Subject");
-        }
+       
 
         public override string ToString()
         {

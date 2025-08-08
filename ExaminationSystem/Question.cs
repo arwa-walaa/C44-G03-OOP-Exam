@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExaminationSystem
 {
-    public abstract class Question : ICloneable, IComparable
+  
+    public abstract class Question 
     {
         public string Header { get; set; }
         public string Body { get; set; }
@@ -32,8 +33,7 @@ namespace ExaminationSystem
             RightAnswer = answer;
         }
 
-        public abstract object Clone();
-        public abstract int CompareTo(object obj);
+      
         public abstract override string ToString();
     }
 }
